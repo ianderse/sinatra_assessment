@@ -6,7 +6,10 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require 'rack/test'
 require 'bundler'
+require 'capybara'
 Bundler.require
+
+Capybara.app            = CMS
 
 module CleanTheDatabase
   DatabaseCleaner.strategy = :truncation
@@ -26,6 +29,7 @@ end
 
 class FeatureTest < MiniTest::Test
   include Rack::Test::Methods
+  include Capybara::DSL
 
   def app
     CMS

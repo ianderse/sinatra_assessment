@@ -4,13 +4,10 @@
   </head>
   <body>
     <h1>Sinatra CMS</h1>
-
     <p>
-      <%= page.content %>
+    	<% pages.each do |page| %>
+      	<%= page.content %>
+      <% end %>
     </p>
-    <p>
-		  <a href="/<%= page.slug %>/edit">edit</a>
-		</p>
-
   </body>
 </html>

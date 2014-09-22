@@ -2,7 +2,6 @@ require './test/test_helper'
 
 class PageIndexTest < FeatureTest
   def test_it_shows_all_pages
-    skip
     page_data_1 = {:slug => "location",
                    :content => "We're located in Denver, CO!"}
     page_data_2 = {:slug => "contact",

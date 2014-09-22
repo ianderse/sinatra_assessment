@@ -1,0 +1,15 @@
+<h1>Edit Page</h1>
+
+<form action="/<%= page.slug %>" method='POST'>
+  <p>
+    	Edit your Page:
+  </p>
+  <% if page.slug %>
+		<input type="hidden" name="_method" value="PUT" />
+	<% end %>
+  <section id = "field-name">Slug: </section>
+  <input id="text-field" type='text' name='page[slug]' value="<%= page.slug %>"/><br/>
+  <section id = "field-name">Content: </section>
+  <textarea id="text-field" name='page[content]'><%= page.content %></textarea><br/>
+  <input id="button" type='submit' value='submit'/>
+</form>

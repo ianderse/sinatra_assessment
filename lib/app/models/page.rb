@@ -21,6 +21,14 @@ class Page
     table.select.map{|p| Page.new(p)}
   end
 
+  def self.destroy(slug)
+    table.where(:slug => slug).delete
+  end
+
+  def self.update(slug, params)
+    table.where(:slug => slug).update(:slug => params[:slug], :content => params[:content])
+  end
+
   attr_reader :slug, :content
 
   def initialize(data)
